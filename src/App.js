@@ -2,27 +2,24 @@ import "./App.css";
 import SideBar from "./components/Sidebar/SideBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/home/Home";
 import Users from "./pages/Users";
-import Messages from "./pages/Messages";
-import FileManager from "./pages/FileManager";
-import Analytics from "./pages/Analytics";
+import Help from "./pages/Help";
+
 import Order from "./pages/Order";
-import Saved from "./pages/Saved";
-import Setting from "./pages/Setting";
+import Schedules from "./pages/Schedules";
+import Profile from "./components/profile/Profile";
 function App() {
   return (
     <Router>
       <SideBar>
+     <Profile/>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/file-manager" element={<FileManager />} />
+          <Route path="/Help" element={<Help />} />
+          <Route path="/Schedules" element={<Schedules />} />
           <Route path="/order" element={<Order />} />
-          <Route path="/saved" element={<Saved />} />
-          <Route path="/settings" element={<Setting />} />
 
           <Route path="*" element={<> not found</>} />
         </Routes>
